@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "normal"
-version = "0.1.0"
+version = "1.0.0"
 authors = [{name = "Matt Haberland", email = "matt.haberland@gmail.com"}]
 license = "MIT"
 license-files = ["LICENSE"]
