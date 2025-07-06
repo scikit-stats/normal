@@ -1,0 +1,21 @@
+[workspace]
+authors = ["Matt Haberland <mhaberla@calpoly.edu>"]
+channels = ["conda-forge"]
+name = "normal"
+platforms = ["win-64"]
+version = "0.0.0"
+
+[tasks]
+
+[dependencies]
+scipy = ">=1.16.0,<2"
+pixi-pycharm = ">=0.0.8,<0.0.9"
+ipython = ">=9.4.0,<10"
+pytest = ">=8.4.1,<9"
+flit = ">=3.11.0,<4"
+pre-commit = ">=4.2.0,<5"
+ruff = ">=0.12.2,<0.13"
+python-semantic-release = ">=10.2.0,<11"
+
+[pypi-dependencies]
+normal = { path = "./", editable = true }

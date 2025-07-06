@@ -1,0 +1,27 @@
+[build-system]
+requires = ["flit_core >=3.11,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "normal"
+version = "0.0.0"
+authors = [{name = "Matt Haberland", email = "matt.haberland@gmail.com"}]
+license = "MIT"
+license-files = ["LICENSE"]
+dynamic = ["description"]
+dependencies = ["scipy"]
+
+[project.urls]
+Home = "https://github.com/mdhaber/"
+
+[tool.ruff]
+exclude = [".pixi"]
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I"]
+preview = true
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+build_command = "flit build"
+allow_zero_version = false
