@@ -1,10 +1,11 @@
 """
 The normal distribution
 """
+from importlib.metadata import version as get_version
 
 import numpy as np
 from scipy import special, stats
-from importlib.metadata import version as get_version
+
 
 
 __all__ = ["Normal"]
