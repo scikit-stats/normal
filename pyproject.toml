@@ -24,4 +24,10 @@ preview = true
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
 build_command = "flit build"
-allow_zero_version = false
+allow_zero_version = true
+
+[tool.semantic_release.remote]
+name = "upstream"
+
+[tool.flit.sdist]
+include = ["normal"]
