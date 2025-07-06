@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.1.0 (2025-07-06)
+
+### Features
+
+- Major change
+  ([`dafacf3`](https://github.com/scikit-stats/normal/commit/dafacf3e88f831c54c459623e92267580fca446b))
+
+
 ## v0.0.1 (2025-07-06)
 
 ### Bug Fixes
