@@ -2,7 +2,7 @@
 authors = ["Matt Haberland <mhaberla@calpoly.edu>"]
 channels = ["conda-forge"]
 name = "normal"
-platforms = ["win-64"]
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
 version = "0.0.0"
 
 [tasks]
