@@ -52,7 +52,7 @@ jobs:
         with:
           pixi-version: v0.65.0
           cache: true
-          environments: test
+          environments: tests
 
       - name: Test package
         run: pixi run tests
