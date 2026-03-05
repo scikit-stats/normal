@@ -1,21 +1,55 @@
 [workspace]
 authors = ["Matt Haberland <mhaberla@calpoly.edu>"]
-channels = ["conda-forge"]
-name = "normal"
+channels = ["https://prefix.dev/conda-forge"]
 platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
-version = "0.0.0"
+preview = ["pixi-build"]
 
-[tasks]
+# `normal` package definition 
+
+[package.build.backend]
+name = "pixi-build-python"
+version = "*"
+
+[package.host-dependencies]
+uv = "*"
+
+[package.run-dependencies]
+scipy = "*"
+
+# environment definitions
+
+[environments]
+tests = { features = ["tests"], solve-group = "default" }
+lint = { features = ["lint"], solve-group = "default" }
+dev = { features = ["tests", "lint", "dev"], solve-group = "default" }
+
+# default feature definition
+
+[dev]
+# pulls in host and run dependencies
+normal.path = "."
 
 [dependencies]
-scipy = ">=1.16.0,<2"
-pixi-pycharm = ">=0.0.8,<0.0.9"
-ipython = ">=9.4.0,<10"
-pytest = ">=8.4.1,<9"
-flit = ">=3.11.0,<4"
-pre-commit = ">=4.2.0,<5"
-ruff = ">=0.12.2,<0.13"
-python-semantic-release = ">=10.2.0,<11"
+normal.path = "."
 
-[pypi-dependencies]
-normal = { path = "./", editable = true }
+# non-default feature definitions
+
+[feature.tests.dependencies]
+pytest = "*"
+
+[feature.tests.tasks.tests]
+cmd = "pytest"
+default-environment = "tests"
+
+[feature.lint.dependencies]
+ruff = "*"
+pre-commit = "*"
+
+[feature.lint.tasks.lint]
+cmd = "pre-commit run --all-files"
+default-environment = "lint"
+
+[feature.dev.dependencies]
+pixi-pycharm = "*"
+ipython = "*"
+python-semantic-release = "*"
