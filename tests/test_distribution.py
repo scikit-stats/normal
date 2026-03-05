@@ -1,6 +1,6 @@
 import numpy as np
 
-from Normal import Normal
+from normal import Normal
 
 
 def _pdf(x, mu, sigma):
