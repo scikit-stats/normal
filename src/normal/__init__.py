@@ -60,11 +60,11 @@ class _Normal:
         return special.ndtr(z)
 
     def logccdf(self, x, *, mu, sigma):
-        z = (-x - mu) / sigma
+        z = -(x - mu) / sigma
         return special.log_ndtr(z)
 
     def ccdf(self, x, *, mu, sigma):
-        z = (-x - mu) / sigma
+        z = -(x - mu) / sigma
         return special.ndtr(z)
 
     def icdf(self, x, *, mu, sigma):
