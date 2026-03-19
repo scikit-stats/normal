@@ -41,7 +41,7 @@ class _Normal:
 
     @property
     def support(self):
-        return {"endpoints": (-np.inf, np.inf)}
+        return {"endpoints": (-np.inf, np.inf), "typical": (-1, 1)}
 
     def logpdf(self, x, *, mu, sigma):
         z = (x - mu) / sigma
